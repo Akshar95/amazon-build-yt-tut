@@ -7,6 +7,9 @@ import {
 import { signIn, signOut, useSession } from "next-auth/client";
 
 function Heading() {
+
+    const [session] = useSession();
+
     return (
         <header>
             {/* Top nav */}
@@ -33,8 +36,8 @@ function Heading() {
                {/* Right */}
                 <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
                     
-                    <div onClick={signIn} className="link">
-                        <p>Hello Akshar Patel</p>
+                    <div onClick={!session ? signIn : signOut} className="link">
+                        <p>{session ? `Hello, ${session.user.name}` : 'Sign In'}</p>
                         <p className="font-extrabold md:text-sm">Account & list</p>
                     </div>
 
