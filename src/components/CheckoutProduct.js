@@ -1,5 +1,6 @@
 import { StarIcon } from "@heroicons/react/outline";
 import Image from "next/image";
+import Currency from "react-currency-formatter";
 
 function CheckoutProduct({ 
     id, 
@@ -29,6 +30,11 @@ function CheckoutProduct({
                         <StarIcon keys={i} className='h-5 text-yellow-500' />
                     ))}
                 </div>
+
+                <div className='text-xs my-2 line-clamp-3'>{ description }</div>
+                <Currency quantity={price} currency='GBP' />
+
+                
 
             </div>
             
