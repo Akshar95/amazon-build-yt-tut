@@ -9,7 +9,9 @@ export const basketSlice = createSlice({
   initialState,
   reducers: {
     //Actions
-    addToBasket: (state, action) => {}, //action has a payload inside it
+    addToBasket: (state, action) => {
+      state.items = [...state.items, action.payload]
+    }, //action has a payload inside it
     removeFromBasket: (state, action) => {},
   },
 });
