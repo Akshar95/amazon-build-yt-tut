@@ -34,9 +34,26 @@ function CheckoutProduct({
                 <div className='text-xs my-2 line-clamp-3'>{ description }</div>
                 <Currency quantity={price} currency='GBP' />
 
-                
+                {hasPrime && (
+                    <div className='flex items-center space-x-2 '>
+                        <img 
+                        loading='lazy'
+                        className='w-12'
+                        src='https://links.papareact.com/fdw'
+                        alt=''
+                        />
+                        <p className='text-xs text-gray-500'>FREE Next-Day Delivery</p>
+                    </div>
 
+                    )}
+               
             </div>
+
+        {/* Right add/remove buttons */}
+        <div className='flex flex-col space-y-2 my-auto justify-self-end'>
+            <button className='button'>Add to basket</button>
+            <button className='button'>Remove from Basket</button>
+        </div>
             
         </div>
     )
